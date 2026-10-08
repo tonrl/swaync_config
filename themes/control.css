@@ -1,16 +1,20 @@
 /* ==============================  Control Center ===================================== */
 
-
 .control-center {
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px #363a4f;
         border-radius: 8px;
         margin: 0px;
-        background-color: rgba(36, 39, 58, 0.5);
+        background-color: rgba(36, 39, 58, 0.8);
         color: #cad3f5;
         padding: 15px;
-        box-shadow: inset 0 0 2px 2px rgba(255, 255, 255, 0.2);
+        /* box-shadow: inset 0 0 2px 2px rgba(255, 255, 255, 0.2); */
+        box-shadow: 0 2px 3px 4px rgba(6,6,11,0.4);
 }
 
+/* Control center Notificatoion title, and clse all button */
+.control-center .widget-title {
+        margin-bottom: 5px;
+}
 
 .control-center .widget-title > label {
         color: #cad3f5;
@@ -18,10 +22,11 @@
 }
 
 .control-center .widget-title button {
-        border-radius: 8px;
+        border-radius: 4px;
         color: #cad3f5;
         background-color: #363a4f;
-        box-shadow: inset 0 0 0 1px #494d64;
+        margin-right: 3px;
+        box-shadow: 0 1px 3px 1px rgba(6,6,11,0.3), inset 0 0 4px 0px #494d64;
         padding: 4px;
         padding-left: 6px;
         padding-right: 6px;
@@ -29,73 +34,103 @@
 }
 
 .control-center .widget-title button:hover {
-        box-shadow: inset 0 0 0 1px #494d64;
+        /* box-shadow: inset 0 0 0 1px #494d64; */
         background-color: #5b6078;
         color: #cad3f5;
 }
 
 .control-center .widget-title button:active {
-        box-shadow: inset 0 0 0 1px #494d64;
-        background-color: #7dc4e4;
+        /* box-shadow: inset 0 0 0 1px #494d64; */
+        background-color: rgb(136, 57, 239);
         color: #24273a;
 }
 
 /* ----------------- Control Center Notification ------------------*/
 .control-center .notification-row {
-        margin-top: 5px;
+        /* margin-top: 5px; */
 }
+
 .control-center .notification-row .notification-background {
         /* color: #cad3f5; */
         color: var(--text-color);
         background-color: #363a4f;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 4px 0px;
+        /* box-shadow: inset 0 0 5px 2px #494d64; */
+        box-shadow: 0 2px 3px 0px rgba(6,6,11,0.9);
         margin-top: 0px;
-        margin-bottom: 4px;
-        padding-left: 1px;
-        border-radius: 4px;
+        margin-bottom: 6px;
+        padding-left: 0px;
+        border-radius: 15px;
         /* -gtk-icon-filter: none; */
         -gtk-icon-size: var(--notification-icon-size);
 }
 
-/* Notification Action button */
+.control-center .notification-row .notification-background:hover {
+        /* box-shadow: inset 0 0 0 1px #494d64; */
+        background-color: rgba(65, 69, 89, 0.9);
+        color: #cad3f5;
+}
 
+.control-center .notification-row .notification-background:active {
+        /* box-shadow: inset 0 0 0 1px #494d64; */
+        /* background-color: rgba(254, 100, 11, 0.5); */
+        /* filter: blur(2px); */
+        color: #cad3f5;
+}
+
+/* Notification Action button */
 .control-center .notification-row .notification-background .notification-action {
         border-radius: 8px;
-        border: none;
         color: #cad3f5;
-        background-color: rgba(11, 19, 23, 0.6);
-        box-shadow: inset 0 0 0 1px #494d64;
-        margin: 0px;
-        margin-bottom: 5px;
-        margin-right: 2px;
-        margin-left: 2px;
-        padding: 0px;
+        background-color: rgba(44, 45, 58, 0.8);
+        border: outset 2px rgb(69, 71, 90);
+        margin: 0px 2px 10px 2px;
+        padding: 1px 0px;
         font-size: 7px;
 }
 
 .control-center .notification-row .notification-background .notification-action:hover {
-        box-shadow: inset 0 0 0 1px #494d64;
         background-color: #363a4f;
+        border: inset 2px rgb(49, 50, 68);
+        color: #cad3f5;
+}
+
+.control-center .notification-row .notification-background .notification-action:active {
+        background-color: rgba(114, 135, 253, 1);
         color: #cad3f5;
 }
 
 /* Notification Action Button end */
 
+/* Notification contents*/
 .control-center .notification-row .notification-background .notification {
-        padding: 0px;
-        border-radius: 8px;
+        border-radius: 15px;
+        padding: 0 3px;
+}
+
+.control-center .notification-row .notification-background .notification.low {
+        /* box-shadow: inset 0 0 5px 1px rgb(88, 91, 112); */
+        border: dashed 2px rgb(88, 91, 112);
+}
+
+.control-center .notification-row .notification-background .notification.normal {
+        /* box-shadow: inset 0 0 3px 1px #ed8796; */
+        border: dashed 2px rgb(114, 135, 253);
 }
 
 .control-center .notification-row .notification-background .notification.critical {
-        box-shadow: inset 0 0 3px 0 #ed8796;
+        /* box-shadow: inset 0 0 3px 1px #ed8796; */
+        border: dashed 2px #ed8796;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content {
-        margin: 7px;
+        /* margin: 20px 7px 15px 7px; */
+        /* margin: 10px 5px; */
+        margin: 15px 9px 15px 15px;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .summary {
         color: #cad3f5;
+        margin: 0px 30px 0px 15px;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .time {
@@ -105,19 +140,20 @@
 
 .control-center .notification-row .notification-background .notification .notification-content .body {
         color: #cad3f5;
+        margin: 0px 30px 0px 15px;
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * {
         min-height: 3.4em;
 }
 
-/* ============= Control Center Close button ==============*/
-
-.close-button,
+/* -------------------- Control Center Close button --------------------------*/
 .control-center .notification-row .notification-background .close-button {
-        margin: 7px;
+        /* margin: 7px; */
+        margin: 10px 10px;
         padding: 2px;
-        border-radius: 6.3px;
+        /* border-radius: 6.3px; */
+        border-radius: 100%;
         color: #24273a;
         background-color: #ee99a0;
         -gtk-icon-filter: none;
@@ -135,18 +171,6 @@
 }
 
 /* Notification row */
-.control-center .notification-row .notification-background:hover {
-        /* box-shadow: inset 0 0 0 1px #494d64; */
-        background-color: rgba(65, 69, 89, 0.9);
-        color: #cad3f5;
-}
-
-.control-center .notification-row .notification-background:active {
-        box-shadow: inset 0 0 0 1px #494d64;
-        background-color: #7dc4e4;
-        color: #cad3f5;
-}
-
 .notification.critical progress {
         background-color: #ed8796;
 }
@@ -157,7 +181,6 @@
 }
 
 /*------------ DND -------------- */
-
 .control-center-dnd {
         margin-top: 3px;
         border-radius: 8px;

@@ -10,17 +10,23 @@
         --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
         --notification-group-icon-size: 25px;
         --notification-close-size: 15px;
-}
-:root {
+
         --noti-def-color: rgba(36, 39, 58, 0.7);
         --text-color: rgb(205, 214, 244);
 
-        --group-bg-focus: rgba(88, 91, 112, 0.15);
+        --group-bg-focus: rgba(88, 91, 112, 0.3);
+        /* --group-bg-focus: rgba(45, 47, 59, 0.7); */
         --group-noti-def: 235, 160, 172;
+        --group-collapse-tranistion: opacity 400ms ease-in-out;
 
-        --mpris-album-art-overlay: rgba(69, 71, 90, 0.8);
-        --mpris-button-hover: rgba(0, 0, 0, 0.5);
+        /* --mpris-album-art-overlay: rgba(69, 71, 90, 0.8); */
+        --mpris-album-art-overlay: rgba(49, 50, 68, 0.8);
+        --mpris-button-hover: rgba(0, 0, 0, 0.3);
         --mpris-album-art-icon-size: 60px;
+}
+
+.notification-icon-class {
+    -gtk-icon-size: 32px; /* Or a larger, consistent size like 48px */
 }
 
 trough highlight {
@@ -50,16 +56,14 @@ slider {
 .notification-group {
         /* Styling only for Grouped Notifications */
         transition: opacity 200ms ease-in-out;
+        padding: 2px;
         border-radius: 8px;
-        /* margin-top: 8px; */
-        margin: 5px 8px 2px 8px;
-        padding: 0px 3px 0px 3px;
-        /* The groups close button */
 }
 
-.notification-group:hover,
+.notification-group:focus,
 .notification-group:active {
-        background: var(--group-bg-focus);
+        margin: 2px 0px 10px 0px;
+        background-color: var(--group-bg-focus);
 }
 
 .notification-group-headers {
@@ -81,7 +85,7 @@ slider {
 }
 
 .notification-group .collapsed.not-expanded {
-        opacity: 0.4;
+        /* opacity: 0.4; */
 }
 
 .notification-group.collapsed .notification-row .notification {
@@ -91,12 +95,10 @@ slider {
 /* Notification Expanded groups */
 
 
-
-
 /* Notification close button in the group */
 .notification-group-collapse-button,
 .notification-group-close-all-button {
-        background: transparent;
+        /* background: transparent; */
         color: var(--text-color);
         margin: 4px 0px 4px 0px; 
         border-radius: 6px;
@@ -105,6 +107,7 @@ slider {
 
 .notification-group-collapse-button:hover,
 .notification-group-close-all-button:hover {
+        /* background: var(--mpris-button-hover); */
         background: var(--mpris-button-hover);
 }
 
@@ -112,7 +115,7 @@ slider {
         margin: 7px;
         margin-top: 10px;
         padding: 2px;
-        border-radius: 6.3px;
+        border-radius: 6px;
         color: #24273a;
         background-color: #ee99a0;
         -gtk-icon-filter: none;
